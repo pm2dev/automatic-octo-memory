@@ -61,26 +61,45 @@ section{
 .sec1{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: green;
 }
 
 .sec2{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: blue;
 }
 
 .sec3{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: purple;
 }
 
 .sec4{
     display: none;
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scaleY(1);
+    background-color: red;
 }
 
 .sec5{
     display: none;
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scaleY(1);
+    background-color: yellow;
+}
+
+.active{
+    display: block;
+    animation: scaleAnim 1s ease-in-out;
+    @keyframes scaleAnim {
+        0%{
+            transform: translateY(-100%) scale(0);
+        }
+        // state 2
+        100%{
+            transform: translateY(0) scale(1);
+        }
+    }
 }
 
 // controls
@@ -93,6 +112,13 @@ section{
     flex-direction: column;
     align-items: center;
     transform: translateY(-50%);
+    .active-btn{
+        background-color: var(--color-secondary) !important; //used the !important keyword here!
+        transition: all .4s ease-in-out;
+        i{
+            color: var(--color-white) !important;
+        }
+    }
     .control{
         padding: 1rem;
         cursor: pointer;
@@ -106,7 +132,7 @@ section{
         margin: .7rem 0;
         box-shadow: var(--box-shadow-1);
         i{
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             color: var(--color-grey2);
             pointer-events: none;
         }
